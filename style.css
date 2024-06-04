@@ -429,73 +429,125 @@ section::before
 
 /* Media queries for responsive design */
 @media (max-width: 768px) {
+    header {
+        padding: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav {
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        margin-bottom: 5px;
+    }
+
+    header nav {
+        display: none;
+    }
+
+    header nav.active {
+        display: block;
+    }
+
+    section {
+        padding: 50px;
+        height: auto;
+    }
+
+    .sec {
+        padding: 50px;
+    }
+
+    #text {
+        font-size: 4vw;
+        right: -200px;
+        top: 5%;
+        left: 50%;
+    }
+
+    #sun {
+        width: 150px;
+        height: 150px;
+        top: 5%;
+        left: 80%;
+    }
+
+    #house {
+        height: 200px;
+    }
+}/* Existing CSS styles */
+
+@media (max-width: 480px) {
+  /* Styles for screens up to 480px width (phones) */
+
   header {
-      padding: 20px;
-      flex-direction: column;
-      align-items: flex-start;
-  }
-
-  header nav {
-      margin-top: 20px;
-      width: 100%;
-  }
-
-  header nav ul {
-      flex-direction: column;
-      align-items: flex-start;
+      padding: 10px;
   }
 
   header nav ul li {
-      margin-left: 0;
-      margin-bottom: 10px;
-  }
-
-  .menu-toggle {
-      display: block;
-      cursor: pointer;
-  }
-
-  .menu-toggle span {
-      display: block;
-      width: 25px;
-      height: 3px;
-      background-color: #333;
       margin-bottom: 5px;
   }
 
-  header nav {
-      display: none;
-  }
-
-  header nav.active {
-      display: block;
+  .menu-toggle span {
+      width: 20px;
+      height: 2px;
+      margin-bottom: 3px;
   }
 
   section {
-      padding: 50px;
-      height: auto;
-  }
-
-  .sec {
-      padding: 50px;
+      padding: 30px;
   }
 
   #text {
-      font-size: 4vw;
-      right: -200px;
-      top: 5%;
+      font-size: 6vw;
+      right: -150px;
+      top: 3%;
       left: 50%;
   }
 
   #sun {
-      width: 150px;
-      height: 150px;
-      top: 5%;
-      left: 80%;
+      width: 100px;
+      height: 100px;
+      top: 3%;
+      left: 85%;
   }
 
   #house {
-      height: 200px;
+      height: 150px;
+  }
+
+  .sec {
+      padding: 20px 10px;
+  }
+
+  .sec h2 {
+      font-size: 1.2em;
+  }
+
+  .sec p {
+      font-size: 0.8em;
   }
 }
     
