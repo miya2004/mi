@@ -1,0 +1,501 @@
+@import url();
+@import url('https://fonts.googleapis.com/css2?family=Jacques+Francois+Shadow&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+}
+
+body
+{
+    margin: 0; 
+    height: auto; 
+    background-color: #92e1cb;
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    overflow: auto;      
+}
+#page2 {
+    margin: 0; 
+    height: 100vh; 
+    background-image: url(background2.jpeg);
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    overflow: auto; 
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px; /* Adjust the maximum width as needed */
+}
+
+.gallery-container img {
+    width: 300px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin: 10px; /* Add spacing between images */
+    object-fit: cover; 
+}
+
+header
+{ 
+    position: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown li {
+    list-style: none;
+}
+
+.dropdown li a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown li a:hover {
+    background-color: #ffffff;
+}
+
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown-submenu:hover .dropdown-submenu-content {
+    display: block;
+}
+
+header ul li:hover .dropdown {
+    display: block;
+}
+
+header .logo
+{
+    color: #150938;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header ul
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li
+{
+    list-style: none;
+    margin-left: 20px;
+}
+
+header ul li a
+{
+    text-decoration: none;
+    padding: 6px 15px;
+    color: rgb(13, 17, 17);
+    border-radius: 20px;
+}
+
+header ul li a:hover,
+header ul li a:active 
+{
+    background: rgb(255, 255, 255);
+    color: black;
+}
+
+section
+{
+    position: relative;
+    width: 100%;
+    height: 140vh;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+section img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+section::before
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, #92e1cb, transparent);
+    z-index: 1000;
+}
+
+#sun
+{
+    width: 300px; 
+    height: 300px;    
+    position: absolute;
+    top: 10%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+    z-index: 2; 
+}
+
+#house 
+{
+    height: auto;
+    z-index: 3; 
+}
+
+#text {
+    position: absolute;
+    right: -350px;
+    color: #316262;
+    white-space: nowrap;
+    font-size: 6.0vw;
+    z-index: 1; 
+    top: 8%;
+    left: 42%;
+    transform: translate(-50%, -50%);
+    font-family: 'Jacques Francois Shadow';
+    font-weight: 400;
+}   
+
+.sec
+{
+    position: relative;
+    padding: 100px;
+    background-color: #92e1cb;
+    margin: 0; 
+    height: 100vh; 
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    overflow: auto;  
+}
+
+.sec h2 
+{
+    font-size: 3.2em;
+    margin-bottom: 10px;
+    color: rgb(4, 5, 5);
+}
+
+.sec p 
+{
+    top: 10%;
+    font-size: 1.2em;
+    color: rgb(21, 22, 22);
+}
+
+.gallery-container1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.gallery-item1 img {
+    max-width: 1000px;
+    height: auto;
+}
+
+.gallery-item {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.gallery-item.active {
+    display: flex;
+    opacity: 2;
+}
+
+.gallery-container.active{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.gallery-item.slide-out {
+    animation: slide-out 1.0s ease-in-out forwards;
+}
+
+.gallery-item.slide-in {
+    animation: slide-in 1.0s ease-in-out forwards;
+}
+
+@keyframes slide-out {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.gallery-item img {
+    max-width: 100%;
+    height: 500px;
+    object-fit: contain;
+}
+
+.gallery-text {
+    margin-left: 30px;
+}
+
+.arrow-container {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.prev-arrow,
+.next-arrow {
+    font-size: 24px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.image-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-box {
+    width: 220px; 
+    height: 400px; 
+    border-radius: 50px;
+    overflow: hidden;
+    margin: 0 70px;
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(80%);
+}
+
+.prev-btn,
+.next-btn {
+    font-size: 24px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#subject {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#learningoutcome{
+    padding: 50px 0;
+}
+
+.learningoutcome-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 30px;
+    margin-top: 250px;
+}
+
+.learningoutcome-list div{
+    background: rgba(146,225,203,255);
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 50px;
+    transition: background 0.5s, transform 0.5s;
+}
+
+.learningoutcome-list div h2{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+.learningoutcome-list div a{
+    text-decoration: none;
+    color: #090909;
+    font-size: 12px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.learningoutcome-list div:hover{
+    background: #ffffff;
+    transform: translate(-10px);
+}
+#hobby-section {
+      text-align: center;
+    }
+
+    #hobby-images {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+    }
+
+    .hobby-image {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .scattered {
+      position: absolute;
+      animation: scatter 1s ease-in-out;
+    }
+
+    @keyframes scatter {
+      0% {
+        transform: translate(0, 0);
+      }
+      100% {
+        transform: translate(calc(random(100) * 1vw - 50vw), calc(random(100) * 1vh - 50vh));
+      }
+    }
+
+    /* Existing CSS styles */
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  header {
+      padding: 20px;
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  header nav {
+      margin-top: 20px;
+      width: 100%;
+  }
+
+  header nav ul {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  header nav ul li {
+      margin-left: 0;
+      margin-bottom: 10px;
+  }
+
+  .menu-toggle {
+      display: block;
+      cursor: pointer;
+  }
+
+  .menu-toggle span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: #333;
+      margin-bottom: 5px;
+  }
+
+  header nav {
+      display: none;
+  }
+
+  header nav.active {
+      display: block;
+  }
+
+  section {
+      padding: 50px;
+      height: auto;
+  }
+
+  .sec {
+      padding: 50px;
+  }
+
+  #text {
+      font-size: 4vw;
+      right: -200px;
+      top: 5%;
+      left: 50%;
+  }
+
+  #sun {
+      width: 150px;
+      height: 150px;
+      top: 5%;
+      left: 80%;
+  }
+
+  #house {
+      height: 200px;
+  }
+}
+    

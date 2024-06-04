@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miya's Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <header>
+        <a class="logo"></a>
+        <nav>
+            <ul>
+                <li><a href="main.html" class="active">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li>
+                    <a href="#">Learning Outcomes</a>
+                    <ul class="dropdown">
+                        <li><a href="technical.html">Technical Skills</a></li>
+                        <li><a href="proffesional.html">Professional Skills</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">References</a></li>
+            </ul>
+        </nav>
+<div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+</div>
+    </header>
+
+    <section>
+        <h2 id="text">Huien's Portfolio</h2>
+        <img src="kawaii-sun-icon-png.webp" id="sun" alt="Sun Icon">
+        <div class="house-container">
+            <img src="background-ai-brush-removebg-4jvm4k6n.png" id="house" alt="House Image">
+        </div>
+    </section>
+
+    <div class="sec" id="sec">
+        <h2>About Me</h2>
+        <h1>Welcome to my portfolio!</h1>
+        <br></br>
+        <p>Hello, my name is Huien Mi Yordanova but people often call me Mi or Miya. I am Vietnamese that is born in Bulgaria. My mom is Vietnamese, and my dad is Bulgarian.
+          <br></br> My hobbies are connected with fashion designing. I do sketches of clothes in my free time, and I also enjoy gaming.</p><br></br>
+        <p>I am a retaker, my first choice was Software, then I switched to Business, and now I chose Media Design ICT, which was my first choice. I wanted to challenge myself more and do the hardest profile, which was told to me, but I realized that studying something that you enjoy is much more easier and interesting for me.</p>
+        <br></br> <p>My goals are to be more confident in myself and not to take criticisms personally but to learn from them and my mistakes. I want to enjoy my study at Fontys and do my best. Asking for feedback is important, and I will try to ask for them more often.</p>
+    </div>
+
+   
+   
+   
+    <script>
+        let sun = document.getElementById('sun');
+        let house = document.getElementById('house');
+        let text = document.getElementById('text');
+
+        window.addEventListener('scroll', function() {
+            let value = window.scrollY;
+            sun.style.top = value * 0.80 + 'px';
+            house.style.top = value * 0.41 + 'px';
+            text.style.marginRight = value * 5.0 + 'px';
+            text.style.marginTop = value * 4.0 + 'px';
+        });
+        const menuToggle = document.querySelector('.menu-toggle');
+const nav = document.querySelector('header nav');
+
+menuToggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+});
+
+    </script>
+</body>
+</html>
